@@ -7,9 +7,9 @@ import './header.css';
 export default function Header(props) {
   return (
     <header>
-      <TopNav
-        onGenerateAuralUpdate={() => props.onGenerateAuralUpdate()}
-        onRestartGame={() => props.onRestartGame()}
+      <TopNav onRestartGame={() => props.onNewGame()}
+        // onGenerateAuralUpdate={() => props.onGenerateAuralUpdate()}
+       
       />
       <h1>HOT or COLD</h1>
     </header>
