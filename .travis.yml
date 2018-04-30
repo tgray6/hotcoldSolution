@@ -1,10 +1,10 @@
 language: node_js
 node_js: node
-# cache:
-#   directories:
-#     - node_modules
+cache:
+  directories:
+    - node_modules
 script:
-  - npm test
+  - npm test a
 env:
   - CI=true
   
