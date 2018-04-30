@@ -8,7 +8,7 @@ export default function GuessCount(props) {
 
     return (
         <h2 id="guessCount">
-            Guesses:  <span id="count">{props.guessCount}</span> 
+            Guesses: <span id="count">{props.guessCount}</span> 
         </h2>
     );
 }
