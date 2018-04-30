@@ -9,7 +9,7 @@ describe('<Feedback />', () => {
   });
   it('Should Render Some Feedback', () => {
   	let feedBack = 'Testing';
-
+  	//
   	let wrapper = shallow(<Feedback feedback={feedBack} />);
   	expect(wrapper.contains(feedBack)).toEqual(true);
   });
