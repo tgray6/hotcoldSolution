@@ -1,17 +1,19 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import './guess-count.css';
 
-export default function GuessCount(props) {
-    // const isPlural = props.guessCount !== 1;
-    // const guessNoun = isPlural ? 'guesses' : 'guess';
+export function GuessCount(props) {
 
     return (
         <h2 id="guessCount">
-            Guesses: <span id="count">{props.guessCount}</span> 
+            Guesses: <span id="count">{props.guessCount}</span>
         </h2>
     );
 }
 
-//after span on line 11
-// {guessNoun}!
+const mapStateToProps = state => ({
+    guessCount: state.guesses.length
+});
+
+export default connect(mapStateToProps)(GuessCount);
