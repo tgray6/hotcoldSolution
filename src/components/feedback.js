@@ -9,28 +9,47 @@ export function Feedback(props) {
    * as a DOM change, even when a guess does not change the feedback text.
    * This is necessary for consistent aural feedback via aria-live.
   */
-  const key = props.guessCount;
-
-  let guessAgain;
-  if (key !== 0) {
-    guessAgain = <span className="visuallyhidden">Guess again!</span>;
-  }
   return (
     <h2 
-      key={key}
       id="feedback"
       role="status"
       aria-live="assertive"
       aria-atomic="true"
     >
-      {props.feedback} {guessAgain}
+      {props.feedback}
     </h2>
   );
 }
 
 const mapStateToProps = state => ({
-  guessCount: state.guesses.length,
   feedback: state.feedback
 });
 
 export default connect(mapStateToProps)(Feedback);
+
+
+//   const key = props.guessCount;
+
+//   let guessAgain;
+//   if (key !== 0) {
+//     guessAgain = <span className="visuallyhidden">Guess again!</span>;
+//   }
+//   return (
+//     <h2 
+//       key={key}
+//       id="feedback"
+//       role="status"
+//       aria-live="assertive"
+//       aria-atomic="true"
+//     >
+//       {props.feedback} {guessAgain}
+//     </h2>
+//   );
+// }
+
+// const mapStateToProps = state => ({
+//   guessCount: state.guesses.length,
+//   feedback: state.feedback
+// });
+
+// export default connect(mapStateToProps)(Feedback);
