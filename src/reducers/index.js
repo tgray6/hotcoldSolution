@@ -2,7 +2,7 @@ import {ADD_GUESS, RESTART_GAME} from '../actions'
 
 const initialState = {
 	guesses: [],
-    feedback: 'Make your guess!',
+    feedback: 'Guess a Number',
     correctAnswer: Math.round(Math.random() * 100) + 1
 };
 
@@ -10,8 +10,9 @@ export const hotcoldReducer = (state=initialState, action) => {
     if (action.type === RESTART_GAME) {
         return Object.assign({}, state, {
             guesses: [],
-            feedback: 'Make your guess!',
+            feedback: 'Guess a Number',
             correctAnswer: action.correctAnswer
+            // correctAnswer: Math.round(Math.random() * 100) + 1
         });
     }
 
@@ -24,7 +25,7 @@ export const hotcoldReducer = (state=initialState, action) => {
     	} else if (difference >= 30) {
       		feedback = 'Cold';
     	} else if (difference >= 10) {
-     		 feedback = 'Warm.';
+     		 feedback = 'Warm';
    		} else if (difference >= 1) {
      		feedback = 'Hot!';
     	} else {
